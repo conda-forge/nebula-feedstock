@@ -1,5 +1,5 @@
 {% set name = "nebula" %}
-{% set version = "1.6.0" %}
+{% set version = "1.9.4" %}
 
 package:
   name: {{ name }}
@@ -7,8 +7,9 @@ package:
 
 source:
   url: https://github.com/slackhq/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b16638b99d80a4ae6373f7757a0064dc0defd3f9e165617e7b5c3be9e64d3605
-
+  sha256: 7feb8337a8ce791bb97211a70fddfc9cb936e2a9bfbb3bc8ac714c868da3fc86
+  patches:
+    - go_install_cross.patch  # [unix]
 build:
   number: 0
 
@@ -42,3 +43,4 @@ extra:
   recipe-maintainers:
     - MichaelKora
     - wolfv
+    - looooo
